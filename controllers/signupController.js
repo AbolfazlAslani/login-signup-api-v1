@@ -1,5 +1,5 @@
 const User = require('../model/user');
-const joiValidation = require('../model/validation');
+const joiValidation = require('../utils/validation');
 const bcrypt = require('bcrypt');
 
 module.exports = async(req, res) => {
