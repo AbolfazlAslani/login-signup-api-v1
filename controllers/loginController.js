@@ -1,6 +1,6 @@
 const loginValidation = require('../utils/loginValidation');
 const User = require('../model/user');
-
+const bcrypt = require('bcrypt');
 
 module.exports = async(req, res) => {
 
@@ -9,14 +9,20 @@ module.exports = async(req, res) => {
             return res.status(400).json(loginValidation(req.body).error.details[0].message)
         } else {
             const usernameExist = await User.findOne({ username: req.body.username });
+
             if (!usernameExist) {
-                res.status(400).json({ msg: "username or password is incorrect" });
+                return res.status(400).json({ msg: "incorrect username" });
             } else {
-                res.status(200).json({ msg: "Your Username Is Correct!" })
+                const bcryptPasswordValidation = await bcrypt.compare(req.body.password, usernameExist.password)
+                if (!bcryptPasswordValidation) {
+                    return res.status(400).json({ msg: "incorrect password" })
+                } else {
+                    return res.status(200).json({ msg: "Logged In !" })
+                }
             }
         }
     } catch (err) {
-        res.status(400).json(err)
+        return res.status(400).json(err)
     }
 
 
