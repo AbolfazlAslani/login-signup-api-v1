@@ -6,6 +6,7 @@ const morgan = require('morgan');
 
 //* routing
 const signup = require('./routes/signup');
+const login = require('./routes/login');
 
 
 //* Configuration
@@ -24,6 +25,8 @@ const mongoServer = require('./config/db');
 //* Middlewares
 app.use(bodyParser.json());
 app.use('/api/v1', signup);
+app.use('/api/v1', login)
+
 
 //* port configuration
 PORT = process.env.PORT
