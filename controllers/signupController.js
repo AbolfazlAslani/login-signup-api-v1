@@ -1,5 +1,6 @@
 const User = require('../model/user');
 const joiValidation = require('../model/validation');
+const bcrypt = require('bcrypt');
 
 module.exports = async(req, res) => {
     try {
@@ -15,6 +16,8 @@ module.exports = async(req, res) => {
             return res.status(400).json(joiValidation(data).error.details[0].message)
 
         } else {
+            const salt = await bcrypt.genSalt(10);
+            newUser.password = await bcrypt.hash(newUser.password, salt);
             await newUser.save();
             return res.status(200).json({
                 message: "SignUp Done !",
