@@ -1,6 +1,5 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">login-signup-api</h3>
@@ -8,7 +7,7 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
+
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
@@ -16,7 +15,7 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Few lines describing my project.
     <br> 
 </p>
 
@@ -27,14 +26,12 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+this project is just a simple login and signup api
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -42,70 +39,67 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+What things you need to install the software and how to install them type this in terminal :
 
 ```
-Give examples
+npm i
 ```
 
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running.
 
-Say what the step will be
+you to change the config/config.env file
+
+change MongoDB URI
 
 ```
-Give the example
-```
-
-And repeat
+MONGODB_URI='mongodb://localhost:27017'
 
 ```
-until finished
-```
 
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+to Your database URI
 
 ```
-Give an example
+MONGODB_URI='mongodb://Your MongoDB URI'
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+if You want to run on development mode type this in terminal :
 
 ```
-Give an example
+npm run dev
+```
+
+and if you want ro start the project on production type this in terminal:
+
+```
+npm start
 ```
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+make a get request to see what you Can do 😉 :
+
+```
+http://localhost:3000
+```
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-Add additional notes about how to deploy this on a live system.
+The Signup section will signup the user at the mongodb database
+after that you signedup the user you can login at the login section
+if your login was successfull it will give you a token
+token permissions will be added in the feuture 👍
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [MongoDB](https://www.mongodb.com/) - Database
 - [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+- [@AbolfazlAslani](https://github.com/AbolfazlAslani) - Idea & Initial work
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
