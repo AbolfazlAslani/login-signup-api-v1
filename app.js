@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 
 //* routing
-const signup = require('./routes/signup');
-const login = require('./routes/login');
+const loginSignupRoute = require('./routes/loginAndSignup');
+const mainRoute = require('./routes/main');
 
 
 //* Configuration
@@ -24,8 +24,9 @@ const mongoServer = require('./config/db');
 
 //* Middlewares
 app.use(bodyParser.json());
-app.use('/api/v1', signup);
-app.use('/api/v1', login)
+app.use('/', mainRoute)
+app.use('/api/v1', loginSignupRoute);
+
 
 
 //* port configuration

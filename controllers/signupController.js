@@ -21,7 +21,7 @@ module.exports = async(req, res) => {
             await newUser.save();
             return res.status(200).json({
                 message: "SignUp Done !",
-                databaseDocument: newUser
+                id: newUser._id
             })
         }
 

@@ -6,6 +6,15 @@ const jwt = require('jsonwebtoken');
 module.exports = async(req, res) => {
 
     try {
+        res.statis(200).json({
+
+            msg: "You Can Sign up With this Structre ",
+            "email": "email@email.com",
+            "username": "username",
+            "pasword": "123456",
+            "confirmPassword": "123456"
+
+        })
         if (loginValidation(req.body).error) {
             return res.status(400).json(loginValidation(req.body).error.details[0].message)
         } else {
